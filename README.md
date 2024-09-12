@@ -1,8 +1,6 @@
-# :earth_americas: GDP dashboard template
+# :deciduous_tree: sqlglot Abstract Syntax Tree (AST) Viewer
 
-A simple Streamlit app showing the GDP of different countries in the world.
-
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://gdp-dashboard-template.streamlit.app/)
+An app to display the abstract syntax tree for SQL code using [sqlglot](sqlglot.com).
 
 ### How to run it on your own machine
 
