@@ -209,3 +209,5 @@ if parsed_sql[0]:
             for class_name in flattenable_classes
         ),
     )
+
+    st.code(parsed_sql[0].__repr__())
