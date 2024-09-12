@@ -36,7 +36,7 @@ If there are multiple statements, only the first statement will be visualized.
 ""
 ""
 
-sql = st.text_area("Input SQL code here:", value=example_sql)
+sql = st.text_area("Input SQL code here:", value=example_sql, height=200)
 
 ""
 ""
