@@ -4,6 +4,18 @@ from sqlglot import expressions
 import networkx as nx
 from st_link_analysis import st_link_analysis, NodeStyle
 
+example_sql = """\
+CREATE VIEW sales.customer_order_total_percentage AS
+SELECT
+    order.id,
+    email,
+    order.total_amount,
+    total_spent,
+    100 * order.total_amount / total_spent AS order_total_percentage
+FROM sales.customer_order_summary
+JOIN sales.order
+    ON customer_order_summary.order_id = order.id;"""
+
 # Set the title and favicon that appear in the Browser's tab bar.
 st.set_page_config(
     page_title="sqlglot Abstract Syntax Tree (AST) Viewer",
@@ -24,7 +36,7 @@ If there are multiple statements, only the first statement will be visualized.
 ""
 ""
 
-sql = st.text_area("Input SQL code here:")
+sql = st.text_area("Input SQL code here:", value=example_sql)
 
 ""
 ""
@@ -86,7 +98,7 @@ def ast_to_digraph(ast, flattenable_classes):
             node_id,
             label=node_label,
             name=node_name,
-            kind=node.args.get("kind"),
+            kind=node_kind,
             content=node_content,
         )
         # If there is a parent node, add an edge from parent to current node
