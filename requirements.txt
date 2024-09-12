@@ -1,5 +1,4 @@
 streamlit
-pandas
 sqlglot
 networkx
-pydot
+st-link-analysis
